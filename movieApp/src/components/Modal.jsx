@@ -3,19 +3,22 @@ import { useContext, useState } from "react";
 // import { step } from "../utility";
 
 export default function Modal() {
-  const { selectedMovie, closeModal, moviesArray } = useContext(MovieContext);
+  const { selectedMovie, closeModal, moviesArray, setMoviesArray } =
+    useContext(MovieContext);
   const [detailedMovie, setDetailedMovie] = useState(selectedMovie);
 
   function stepTwo(e) {
     if (e.target.dataset.step == "next") {
-      setDetailedMovie(
-        (prevDetailed) =>
-          moviesArray.filter((movie) => movie.Id == prevDetailed.Id + 1)[0]
+      setDetailedMovie((prevDetailed) =>
+        prevDetailed.Id == moviesArray.length - 1
+          ? moviesArray.filter((movie) => movie.Id == 1)[0]
+          : moviesArray.filter((movie) => movie.Id == prevDetailed.Id + 1)[0]
       );
     } else if (e.target.dataset.step == "previous") {
-      setDetailedMovie(
-        (prevDetailed) =>
-          moviesArray.filter((movie) => movie.Id == prevDetailed.Id - 1)[0]
+      setDetailedMovie((prevDetailed) =>
+        prevDetailed.Id == 1
+          ? moviesArray.filter((movie) => movie.Id == moviesArray.length - 1)[0]
+          : moviesArray.filter((movie) => movie.Id == prevDetailed.Id - 1)[0]
       );
     }
   }
