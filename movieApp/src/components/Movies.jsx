@@ -5,16 +5,26 @@ import Title from "./Title";
 import Table from "./Table";
 import Modal from "./Modal";
 import Search from "./Search";
+import Pagination from "./Pagination";
 
 const MovieContext = createContext();
 
 export default function Movies() {
   const [moviesArrayClone, setMoviesArrayClone] = useState([]);
   const [moviesArray, setMoviesArray] = useState(movies);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [moviesPerPage, setMoviesPerPage] = useState(20);
   const [selectedMovie, setSelectedMovie] = useState([]);
   const [modalState, setModalState] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
+  // const [searchValue, setSearchValue] = useState("");
 
+  const indexOfLastMovie = currentPage * moviesPerPage;
+  const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
+  const currentMovies = moviesArray.slice(indexOfFirstMovie, indexOfLastMovie);
+
+  function paginate(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
   function getMovieDetail(e) {
     setSelectedMovie(
       moviesArray.filter((movie) => movie.Id == e.target.dataset.select)[0]
@@ -29,29 +39,7 @@ export default function Movies() {
   useEffect(() => {
     setMoviesArrayClone(movies);
   }, []);
-  // function getInputValue(event) {
-  //   setSearchValue(event.target.value);
-  // }
 
-  // function deleteSearch() {
-  //   setSearchValue("");
-  //   setMoviesArray(movies);
-  // }
-
-  // function search() {
-  //   const searchedMovieArray = moviesArray.filter((film) => {
-  //     if (
-  //       film.Title &&
-  //       film.Title.toString()
-  //         .toLowerCase()
-  //         .includes(searchValue.toLocaleLowerCase())
-  //     ) {
-  //       return film;
-  //     }
-  //   });
-  //   setMoviesArray(searchedMovieArray);
-  //   console.log("search", moviesArray);
-  // }
   return (
     <MovieContext.Provider
       value={{
@@ -60,36 +48,19 @@ export default function Movies() {
         selectedMovie,
         closeModal,
         setMoviesArray,
-        searchValue,
-        setSearchValue,
+
         moviesArrayClone,
+        currentMovies,
+        moviesPerPage,
+        paginate,
       }}
     >
       <Search />
-      {/* <Search>
-        <div>
-          <div className="form--container">
-            <input
-              type="search"
-              placeholder="Start typing..."
-              className="form--input"
-              name="searchBar"
-              value={searchValue}
-              onChange={setSearchValue}
-            />
-            <button
-              className="form--button--search"
-              onClick={() => console.log(searchValue)}
-            >
-              Search
-            </button>
-            <button className="form--button--clear">Delete search</button>
-          </div>
-        </div>
-      </Search> */}
+
       <Title />
       {modalState ? <Modal /> : null}
       <Table />
+      <Pagination />
     </MovieContext.Provider>
   );
 }

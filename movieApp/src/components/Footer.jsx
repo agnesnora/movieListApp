@@ -1,3 +1,7 @@
 export default function Footer({ children }) {
-  return <h1> {children}</h1>;
+  return (
+    <div className="footer">
+      <h1> {children}</h1>
+    </div>
+  );
 }

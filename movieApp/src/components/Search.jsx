@@ -1,25 +1,28 @@
 import { MovieContext } from "./Movies";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export default function Search() {
   const {
-    searchValue,
-    setSearchValue,
+    // searchValue,
+    // setSearchValue,
     moviesArray,
     setMoviesArray,
     moviesArrayClone,
   } = useContext(MovieContext);
 
-  // function getInputValue(event) {
-  //   setSearchValue(event.target.value);
-  // }
+  const [searchValue, setSearchValue] = useState("");
+  function getInputValue(event) {
+    setSearchValue(event.target.value);
+    console.log(searchValue);
+  }
 
   function deleteSearch() {
     setSearchValue("");
+    setMoviesArray(moviesArrayClone);
   }
 
   function search() {
-    const searchedMovieArray = moviesArray.filter((film) => {
+    const searchedMovieArray = moviesArrayClone.filter((film) => {
       if (
         film.Title &&
         film.Title.toString()
@@ -47,7 +50,7 @@ export default function Search() {
           className="form--input"
           name="searchBar"
           value={searchValue}
-          // onChange={getInputValue}
+          onChange={getInputValue}
         />
         <button className="form--button--search" onClick={search}>
           Search

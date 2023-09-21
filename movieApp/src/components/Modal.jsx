@@ -1,5 +1,6 @@
 import { MovieContext } from "./Movies";
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 // import { step } from "../utility";
 
 export default function Modal() {
@@ -24,7 +25,8 @@ export default function Modal() {
   }
 
   return (
-    <div>
+    <div className="modal--container">
+      {/* <Link to="/modal"> */}
       <h1>{detailedMovie.Title}</h1>
       <h3>Director: {detailedMovie.Director}</h3>
       <h3>Distributor: {detailedMovie.Distributor}</h3>
@@ -42,6 +44,8 @@ export default function Modal() {
         Previous
       </button>
       <button onClick={closeModal}>Close movie</button>
+      {/* <Link to=".">Close modal</Link>
+      </Link> */}
     </div>
   );
 }
