@@ -13,10 +13,9 @@ export default function Movies() {
   const [moviesArrayClone, setMoviesArrayClone] = useState([]);
   const [moviesArray, setMoviesArray] = useState(movies);
   const [currentPage, setCurrentPage] = useState(1);
-  const [moviesPerPage, setMoviesPerPage] = useState(20);
+  const [moviesPerPage] = useState(20);
   const [selectedMovie, setSelectedMovie] = useState([]);
   const [modalState, setModalState] = useState(false);
-  // const [searchValue, setSearchValue] = useState("");
 
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
@@ -48,9 +47,10 @@ export default function Movies() {
         selectedMovie,
         closeModal,
         setMoviesArray,
-
         moviesArrayClone,
         currentMovies,
+        currentPage,
+        setCurrentPage,
         moviesPerPage,
         paginate,
       }}

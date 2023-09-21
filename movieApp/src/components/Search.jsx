@@ -2,18 +2,12 @@ import { MovieContext } from "./Movies";
 import { useContext, useState } from "react";
 
 export default function Search() {
-  const {
-    // searchValue,
-    // setSearchValue,
-    moviesArray,
-    setMoviesArray,
-    moviesArrayClone,
-  } = useContext(MovieContext);
+  const { moviesArray, setMoviesArray, moviesArrayClone } =
+    useContext(MovieContext);
 
   const [searchValue, setSearchValue] = useState("");
   function getInputValue(event) {
     setSearchValue(event.target.value);
-    console.log(searchValue);
   }
 
   function deleteSearch() {
@@ -33,7 +27,6 @@ export default function Search() {
       }
     });
     setMoviesArray(searchedMovieArray);
-    console.log(moviesArray);
   }
   function refresh() {
     setMoviesArray(moviesArrayClone);

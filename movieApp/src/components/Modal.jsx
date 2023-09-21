@@ -1,11 +1,8 @@
 import { MovieContext } from "./Movies";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-// import { step } from "../utility";
 
 export default function Modal() {
-  const { selectedMovie, closeModal, moviesArray, setMoviesArray } =
-    useContext(MovieContext);
+  const { selectedMovie, closeModal, moviesArray } = useContext(MovieContext);
   const [detailedMovie, setDetailedMovie] = useState(selectedMovie);
 
   function stepTwo(e) {
@@ -26,7 +23,6 @@ export default function Modal() {
 
   return (
     <div className="modal--container">
-      {/* <Link to="/modal"> */}
       <h1>{detailedMovie.Title}</h1>
       <h3>Director: {detailedMovie.Director}</h3>
       <h3>Distributor: {detailedMovie.Distributor}</h3>

@@ -4,15 +4,11 @@ import { MovieContext } from "./Movies";
 
 export default function Table() {
   const {
-    moviesArray,
     setMoviesArray,
     getMovieDetail,
-    moviesArrayClone,
+
     currentMovies,
-    // setSearchValue,
-    // searchValue,
   } = useContext(MovieContext);
-  // const [listedMovies, setListedMovies] = useState(moviesArray);
 
   function deleteLine(e) {
     const id = e.target.dataset.delete;
@@ -37,7 +33,7 @@ export default function Table() {
                 {item.Title}{" "}
               </h2>
               <h2 className="movie--column" data-select={item.Id}>
-                {item.Running_Time_min}
+                {item.Running_Time_min ? item.Running_Time_min : " - "}
               </h2>
               <h2 className="movie--column" data-select={item.Id}>
                 {item.Release_Date}
@@ -46,7 +42,7 @@ export default function Table() {
                 {item.IMDB_Rating ? item.IMDB_Rating : "-"}
               </h2>
               <h2 className="movie--column" data-select={item.Id}>
-                {item.Major_Genre ? item.Major_Genre : "Not available"}
+                {item.Major_Genre ? item.Major_Genre : "N/A"}
               </h2>
             </div>
             <div data-delete={item.Id}>
