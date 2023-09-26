@@ -1,47 +1,120 @@
 import { MovieContext } from "./Movies";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import {
+  IoArrowForwardCircle,
+  IoArrowBackCircle,
+  IoCloseCircle,
+} from "react-icons/io5";
+import { IconButton } from "@primer/react";
 
 export default function Modal() {
-  const { selectedMovie, closeModal, moviesArray } = useContext(MovieContext);
-  const [detailedMovie, setDetailedMovie] = useState(selectedMovie);
+  const {
+    selectedMovie,
+    setSelectedMovie,
+    closeModal,
+    moviesArray,
+    setMoviesArray,
+  } = useContext(MovieContext);
+
+  // const [selectedMovie, setselectedMovie] = useState(selectedMovie);
+
+  // HA KITÖRLÖM MÉG MINDIG NEM JÓ, NEM JÓ HELYEN FRISSÍT
+
+  useEffect(() => {
+    setMoviesArray(moviesArray);
+  }, []);
 
   function stepTwo(e) {
+    const lastIndex = moviesArray.length - 1;
+
     if (e.target.dataset.step == "next") {
-      setDetailedMovie((prevDetailed) =>
-        prevDetailed.Id == moviesArray.length - 1
-          ? moviesArray.filter((movie) => movie.Id == 1)[0]
-          : moviesArray.filter((movie) => movie.Id == prevDetailed.Id + 1)[0]
+      setSelectedMovie(
+        (prevDetailed) => {
+          let nextIndex = moviesArray.findIndex(
+            (movie) => movie.Id === prevDetailed.Id + 1
+          );
+          console.log(selectedMovie.Title);
+          return nextIndex == lastIndex
+            ? moviesArray[0]
+            : moviesArray[nextIndex];
+        }
+
+        // moviesArray.findIndex((movie) => movie.Id === prevDetailed.Id + 1);
+        // moviesArray.filter((movie) => movie.Id == prevDetailed.Id + 1)[
+        //   newIndex
+        // ];
+        // });
       );
+
+      // setselectedMovie((prevDetailed) =>
+      //   prevDetailed.Id == moviesArray.length - 1
+      //     ? moviesArray.findIndex((movie) => movie.Id == 1)
+      //     : moviesArray.findIndex((movie) => movie.Id == prevDetailed.Id + 1)
+      // );
     } else if (e.target.dataset.step == "previous") {
-      setDetailedMovie((prevDetailed) =>
-        prevDetailed.Id == 1
-          ? moviesArray.filter((movie) => movie.Id == moviesArray.length - 1)[0]
-          : moviesArray.filter((movie) => movie.Id == prevDetailed.Id - 1)[0]
+      setSelectedMovie(
+        (prevDetailed) => {
+          let prevIndex = moviesArray.findIndex(
+            (movie) => movie.Id === prevDetailed.Id - 1
+          );
+          console.log(prevDetailed.Title, prevIndex);
+          return prevIndex == 0
+            ? moviesArray[lastIndex]
+            : moviesArray[prevIndex];
+        }
+        // moviesArray.findIndex((movie) => movie.Id === prevDetailed.Id + 1);
+        // moviesArray.filter((movie) => movie.Id == prevDetailed.Id + 1)[
+        //   newIndex
+        // ];
+        // });
       );
     }
   }
 
   return (
     <div className="modal--container">
-      <h1>{detailedMovie.Title}</h1>
-      <h3>Director: {detailedMovie.Director}</h3>
-      <h3>Distributor: {detailedMovie.Distributor}</h3>
+      <div className="modal--step">
+        <button>
+          <IoArrowBackCircle
+            onClick={stepTwo}
+            data-step="previous"
+            className="modal--icon"
+          />
+        </button>
+        <h1 className="modal--title">{selectedMovie.Title}</h1>
+        <button>
+          <IoArrowForwardCircle
+            onClick={stepTwo}
+            data-step="next"
+            className="modal--icon"
+          />
+        </button>
+      </div>
+
+      <h3>
+        Director: {selectedMovie.Director ? selectedMovie.Director : "N/A"}
+      </h3>
+      <h3>
+        Distributor:{" "}
+        {selectedMovie.Distributor ? selectedMovie.Distributor : " N/A"}
+      </h3>
       <h3>
         Production budget:{" "}
-        {detailedMovie.Production_Budget.toLocaleString(true)} $
+        {selectedMovie.Production_Budget
+          ? selectedMovie.Production_Budget.toLocaleString(true)
+          : "N/A"}{" "}
+        $
       </h3>
       <h3>
-        Worldwide gross: {detailedMovie.Worldwide_Gross.toLocaleString(true)} $
+        Worldwide gross:{" "}
+        {selectedMovie.Worldwide_Gross
+          ? selectedMovie.Worldwide_Gross.toLocaleString(true)
+          : "N/A"}{" "}
+        $
       </h3>
-      <button onClick={stepTwo} data-step="next">
-        Next
+      <button className="" onClick={closeModal}>
+        Close modal
       </button>
-      <button onClick={stepTwo} data-step="previous">
-        Previous
-      </button>
-      <button onClick={closeModal}>Close movie</button>
-      {/* <Link to=".">Close modal</Link>
-      </Link> */}
     </div>
   );
 }

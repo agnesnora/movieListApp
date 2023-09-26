@@ -1,10 +1,14 @@
 import { MovieContext } from "./Movies";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
+import { IoReloadOutline } from "react-icons/io5";
 
 export default function Search() {
+  const [activeSearch, setActiveSearch] = useState(false);
   const { moviesArray, setMoviesArray, moviesArrayClone } =
     useContext(MovieContext);
-
+  useEffect(() => {
+    setMoviesArray[moviesArray];
+  }, [activeSearch]);
   const [searchValue, setSearchValue] = useState("");
   function getInputValue(event) {
     setSearchValue(event.target.value);
@@ -16,25 +20,43 @@ export default function Search() {
   }
 
   function search() {
-    const searchedMovieArray = moviesArrayClone.filter((film) => {
-      if (
-        film.Title &&
-        film.Title.toString()
-          .toLowerCase()
-          .includes(searchValue.toLocaleLowerCase())
-      ) {
-        return film;
-      }
-    });
-    setMoviesArray(searchedMovieArray);
+    setActiveSearch(true);
+    // const searchedMovieArray = moviesArray.filter((film) => {
+    //   if (
+    //     film.Title &&
+    //     film.Title.toString()
+    //       .toLowerCase()
+    //       .includes(searchValue.toLocaleLowerCase())
+    //   ) {
+    //     return film;
+    //   }
+    // });
+    setMoviesArray(
+      moviesArray.filter((film) => {
+        if (
+          film.Title &&
+          film.Title.toString()
+            .toLowerCase()
+            .includes(searchValue.toLocaleLowerCase())
+        ) {
+          return film;
+        }
+      })
+    );
+
+    // setMoviesArray(searchedMovieArray);
+    // console.log("search után moviesARray ", moviesArray);
   }
   function refresh() {
     setMoviesArray(moviesArrayClone);
   }
   return (
-    <div>
+    <div className="search--container">
       <div>
-        <button onClick={refresh}>Reload</button>
+        <button className="button--search" onClick={refresh}>
+          Reload
+          <IoReloadOutline />
+        </button>
       </div>
       <div className="form--container">
         <input
@@ -45,10 +67,10 @@ export default function Search() {
           value={searchValue}
           onChange={getInputValue}
         />
-        <button className="form--button--search" onClick={search}>
+        <button type="submit" className="button--search" onClick={search}>
           Search
         </button>
-        <button className="form--button--clear" onClick={deleteSearch}>
+        <button type="submit" className="button--search" onClick={deleteSearch}>
           Delete search
         </button>
       </div>

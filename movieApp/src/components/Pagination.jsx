@@ -8,13 +8,11 @@ export default function Pagination() {
   const pageNumbersValue = totalMovies / moviesPerPage;
 
   const pageNumbers = Array.from({ length: pageNumbersValue }, (_, i) => i + 1);
-  console.log(pageNumbers);
 
   function stepForward(currentPage) {
     currentPage == pageNumbers.length
       ? setCurrentPage(1)
       : paginate(currentPage + 1);
-    console.log(currentPage);
   }
 
   function stepBackward(currentPage) {

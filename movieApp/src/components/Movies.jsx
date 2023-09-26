@@ -28,7 +28,7 @@ export default function Movies() {
     setSelectedMovie(
       moviesArray.filter((movie) => movie.Id == e.target.dataset.select)[0]
     );
-    setMoviesArray(moviesArrayClone);
+    // setMoviesArray(moviesArray);
     setModalState(true);
   }
 
@@ -45,6 +45,7 @@ export default function Movies() {
         moviesArray,
         getMovieDetail,
         selectedMovie,
+        setSelectedMovie,
         closeModal,
         setMoviesArray,
         moviesArrayClone,
@@ -56,11 +57,12 @@ export default function Movies() {
       }}
     >
       <Search />
-
-      <Title />
-      {modalState ? <Modal /> : null}
-      <Table />
-      <Pagination />
+      <div className="main--table--container">
+        <Title />
+        {modalState ? <Modal /> : null}
+        <Table />
+        <Pagination />
+      </div>
     </MovieContext.Provider>
   );
 }

@@ -29,24 +29,28 @@ export default function Table() {
               onClick={getMovieDetail}
             >
               {" "}
-              <h2 className="movie--column" data-select={item.Id}>
+              <h3 className="movie--column" data-select={item.Id}>
                 {item.Title}{" "}
-              </h2>
-              <h2 className="movie--column" data-select={item.Id}>
+              </h3>
+              <p className="movie--column" data-select={item.Id}>
                 {item.Running_Time_min ? item.Running_Time_min : " - "}
-              </h2>
-              <h2 className="movie--column" data-select={item.Id}>
+              </p>
+              <p className="movie--column" data-select={item.Id}>
                 {item.Release_Date}
-              </h2>
-              <h2 className="movie--column" data-select={item.Id}>
+              </p>
+              <p className="movie--column" data-select={item.Id}>
                 {item.IMDB_Rating ? item.IMDB_Rating : "-"}
-              </h2>
-              <h2 className="movie--column" data-select={item.Id}>
+              </p>
+              <p className="movie--column" data-select={item.Id}>
                 {item.Major_Genre ? item.Major_Genre : "N/A"}
-              </h2>
+              </p>
             </div>
             <div data-delete={item.Id}>
-              <button data-delete={item.Id} onClick={deleteLine}>
+              <button
+                className="delete--line"
+                data-delete={item.Id}
+                onClick={deleteLine}
+              >
                 Delete line
               </button>
             </div>

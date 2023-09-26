@@ -42,17 +42,20 @@ export default function Title() {
   //   setMoviesArray(sortByTitle(moviesArray, "IMDB_Rating", "descending"));
   // }
   return (
-    <div className="table--container">
-      <div className=" movie--table">
-        <h2 onClick={sortByTitle}>Title</h2>
-        <h2>Duration</h2>
-        <h2>Release date</h2>
-        <h2 onClick={sortByRating}>Rating</h2>
-        <h2 onClick={sortByGenre}>Genre</h2>
+    <div>
+      <div className="table--container">
+        <div className=" movie--table--title">
+          <h2 onClick={sortByTitle}>Title</h2>
+          <h2>Duration</h2>
+          <h2>Release date</h2>
+          <h2 onClick={sortByRating}>Rating</h2>
+          <h2 onClick={sortByGenre}>Genre</h2>
+        </div>
+        <div>
+          <h2 className="delete--title">Delete</h2>
+        </div>
       </div>
-      <div>
-        <h2>Delete</h2>
-      </div>
+      <hr />
     </div>
   );
 }
