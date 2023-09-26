@@ -43,7 +43,7 @@ export default function Title() {
   // }
   return (
     <div>
-      <div className="table--container">
+      <div className="table--container--firstline">
         <div className=" movie--table--title">
           <h2 onClick={sortByTitle}>Title</h2>
           <h2>Duration</h2>
@@ -52,7 +52,7 @@ export default function Title() {
           <h2 onClick={sortByGenre}>Genre</h2>
         </div>
         <div>
-          <h2 className="delete--title">Delete</h2>
+          <h2>Delete</h2>
         </div>
       </div>
       <hr />

@@ -112,7 +112,7 @@ export default function Modal() {
           : "N/A"}{" "}
         $
       </h3>
-      <button className="" onClick={closeModal}>
+      <button className="close--modal--button" onClick={closeModal}>
         Close modal
       </button>
     </div>
