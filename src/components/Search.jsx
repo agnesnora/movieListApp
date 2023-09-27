@@ -1,6 +1,6 @@
 import { MovieContext } from "./Movies";
 import { useContext, useState, useEffect } from "react";
-import { IoReloadOutline } from "react-icons/io5";
+import { IoReloadOutline, IoSearch } from "react-icons/io5";
 
 export default function Search() {
   const [activeSearch, setActiveSearch] = useState(false);
@@ -52,13 +52,7 @@ export default function Search() {
   }
   return (
     <div className="search--container">
-      <div>
-        <button className="button--search" onClick={refresh}>
-          Reload
-          <IoReloadOutline />
-        </button>
-      </div>
-      <div className="form--container">
+      <form className="form--container">
         <input
           type="search"
           placeholder="Start typing..."
@@ -67,11 +61,17 @@ export default function Search() {
           value={searchValue}
           onChange={getInputValue}
         />
-        <button type="submit" className="button--search" onClick={search}>
+        <button type="button" className="button--search" onClick={search}>
           Search
         </button>
-        <button type="submit" className="button--search" onClick={deleteSearch}>
+        <button type="button" className="button--search" onClick={deleteSearch}>
           Delete search
+        </button>
+      </form>
+      <div>
+        <button className="button--search" onClick={refresh}>
+          Reload
+          <IoReloadOutline />
         </button>
       </div>
     </div>

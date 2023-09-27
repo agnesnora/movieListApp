@@ -6,6 +6,7 @@ import Table from "./Table";
 import Modal from "./Modal";
 import Search from "./Search";
 import Pagination from "./Pagination";
+import PopUp from "./PopUp";
 
 const MovieContext = createContext();
 
@@ -16,6 +17,15 @@ export default function Movies() {
   const [moviesPerPage] = useState(20);
   const [selectedMovie, setSelectedMovie] = useState([]);
   const [modalState, setModalState] = useState(false);
+  const [isHide, setIsHide] = useState(
+    setTimeout(() => true),
+    2000
+  );
+  useEffect(() => {
+    setTimeout(() => {
+      setIsHide(false);
+    }, 5000);
+  });
 
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
@@ -62,10 +72,13 @@ export default function Movies() {
     >
       <Search />
       <div className="main--table--container">
-        <Title />
-        {modalState ? <Modal /> : null}
-        <Table />
-        <Pagination />
+        <main className="main">
+          <Title />
+          {/* {isHide ? <PopUp /> : null} */}
+          {modalState ? <Modal /> : null}
+          <Table />
+          <Pagination />
+        </main>
       </div>
     </MovieContext.Provider>
   );

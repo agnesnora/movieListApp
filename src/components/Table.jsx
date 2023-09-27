@@ -22,7 +22,9 @@ export default function Table() {
 
   const selectedStyle = {
     backgroundColor: "#fffffe",
-    color: " #232946",
+    color: "#d9376e",
+    border: "solid 2px #d9376e",
+    borderRadius: "5px",
   };
 
   const redStyle = {

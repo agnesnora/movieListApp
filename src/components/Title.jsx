@@ -51,7 +51,7 @@ export default function Title() {
           <h2 onClick={sortByRating}>Rating</h2>
           <h2 onClick={sortByGenre}>Genre</h2>
         </div>
-        <div>
+        <div className="delete--title--first">
           <h2>Delete</h2>
         </div>
       </div>
