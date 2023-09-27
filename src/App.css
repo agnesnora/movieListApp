@@ -121,9 +121,8 @@ body {
 }
 
 .table--container:hover,
-.table--container:nth-child(even):hover,
-.table--container:active,
-.table--container:nth-child(even):active {
+.table--container:nth-child(even):hover
+{
   background-color: #fffffe;
   color: #232946;
 }
