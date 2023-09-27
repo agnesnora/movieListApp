@@ -1,11 +1,6 @@
 import { MovieContext } from "./Movies";
 import { useContext, useState, useEffect } from "react";
-import {
-  IoArrowForwardCircle,
-  IoArrowBackCircle,
-  IoCloseCircle,
-} from "react-icons/io5";
-import { IconButton } from "@primer/react";
+import { IoArrowForwardCircle, IoArrowBackCircle } from "react-icons/io5";
 
 export default function Modal() {
   const {
@@ -13,64 +8,76 @@ export default function Modal() {
     setSelectedMovie,
     closeModal,
     moviesArray,
-    setMoviesArray,
+    // setMoviesArray,
   } = useContext(MovieContext);
 
   // const [selectedMovie, setselectedMovie] = useState(selectedMovie);
 
   // HA KITÖRLÖM MÉG MINDIG NEM JÓ, NEM JÓ HELYEN FRISSÍT
 
-  useEffect(() => {
-    setMoviesArray(moviesArray);
-  }, []);
+  // useEffect(() => {
+  //   setMoviesArray(moviesArray);
+  // }, []);
+  // function stepTwo(e) {
+  //   const lastIndex = moviesArray.length - 1;
 
+  //   if (e.target.dataset.step == "next") {
+  //     setSelectedMovie(
+  //       (prevDetailed) => {
+  //         let nextIndex = moviesArray.findIndex(
+  //           (movie) => movie.Id === prevDetailed.Id + 1
+  //         );
+
+  //         return nextIndex == lastIndex
+  //           ? moviesArray[0]
+  //           : moviesArray[nextIndex];
+  //       }
+
+  //     );
+
+  //   } else if (e.target.dataset.step == "previous") {
+  //     setSelectedMovie(
+  //       (prevDetailed) => {
+  //         let prevIndex = moviesArray.findIndex(
+  //           (movie) => movie.Id === prevDetailed.Id - 1
+  //         );
+  //         console.log(
+  //           "selectedMovie",
+  //           selectedMovie.Title,
+  //           "prevdetailed:",
+  //           prevDetailed.Title,
+  //           prevIndex
+  //         );
+  //         return prevIndex == 0
+  //           ? moviesArray[lastIndex]
+  //           : moviesArray[prevIndex];
+  //       }
+
+  //     );
+  //   }
+  // }
   function stepTwo(e) {
+    console.log("selected stepben", selectedMovie.Title);
     const lastIndex = moviesArray.length - 1;
 
     if (e.target.dataset.step == "next") {
-      setSelectedMovie(
-        (prevDetailed) => {
-          let nextIndex = moviesArray.findIndex(
-            (movie) => movie.Id === prevDetailed.Id + 1
-          );
-          console.log(selectedMovie.Title);
-          return nextIndex == lastIndex
-            ? moviesArray[0]
-            : moviesArray[nextIndex];
-        }
+      setSelectedMovie((prevDetailed) => {
+        let nextIndex = moviesArray.findIndex(
+          (movie) => movie.Id === prevDetailed.Id + 1
+        );
 
-        // moviesArray.findIndex((movie) => movie.Id === prevDetailed.Id + 1);
-        // moviesArray.filter((movie) => movie.Id == prevDetailed.Id + 1)[
-        //   newIndex
-        // ];
-        // });
-      );
-
-      // setselectedMovie((prevDetailed) =>
-      //   prevDetailed.Id == moviesArray.length - 1
-      //     ? moviesArray.findIndex((movie) => movie.Id == 1)
-      //     : moviesArray.findIndex((movie) => movie.Id == prevDetailed.Id + 1)
-      // );
+        return nextIndex == lastIndex ? moviesArray[0] : moviesArray[nextIndex];
+      });
     } else if (e.target.dataset.step == "previous") {
-      setSelectedMovie(
-        (prevDetailed) => {
-          let prevIndex = moviesArray.findIndex(
-            (movie) => movie.Id === prevDetailed.Id - 1
-          );
-          console.log(prevDetailed.Title, prevIndex);
-          return prevIndex == 0
-            ? moviesArray[lastIndex]
-            : moviesArray[prevIndex];
-        }
-        // moviesArray.findIndex((movie) => movie.Id === prevDetailed.Id + 1);
-        // moviesArray.filter((movie) => movie.Id == prevDetailed.Id + 1)[
-        //   newIndex
-        // ];
-        // });
-      );
+      setSelectedMovie((prevDetailed) => {
+        let prevIndex = moviesArray.findIndex(
+          (movie) => movie.Id === prevDetailed.Id - 1
+        );
+
+        return prevIndex == 0 ? moviesArray[lastIndex] : moviesArray[prevIndex];
+      });
     }
   }
-
   return (
     <div className="modal--container">
       <div className="modal--step">

@@ -6,6 +6,8 @@ export default function Table() {
   const {
     setMoviesArray,
     getMovieDetail,
+    selectedMovie,
+    modalState,
 
     currentMovies,
   } = useContext(MovieContext);
@@ -18,11 +20,36 @@ export default function Table() {
     );
   }
 
+  const selectedStyle = {
+    backgroundColor: "#fffffe",
+    color: " #232946",
+  };
+
+  const redStyle = {
+    color: "#A5414B",
+    backgroundColor: "#fffffe",
+    borderRadius: "18px",
+  };
+  const greenStyle = {
+    color: "green",
+    backgroundColor: "#fffffe",
+    borderRadius: "18px",
+  };
+  const blackStyle = {
+    color: "black",
+    backgroundColor: "#fffffe",
+    borderRadius: "18px",
+  };
+
   return (
     <>
       {currentMovies.map((item) => {
         return (
-          <div key={item.Id} className="table--container">
+          <div
+            key={item.Id}
+            className="table--container"
+            style={item.Id == selectedMovie.Id ? selectedStyle : null}
+          >
             <div
               className="movie--table"
               data-select={item.Id}
@@ -38,14 +65,27 @@ export default function Table() {
               <p className="movie--column" data-select={item.Id}>
                 {item.Release_Date}
               </p>
-              <p className="movie--column" data-select={item.Id}>
+              <p
+                className="movie--column"
+                data-select={item.Id}
+                style={
+                  item.IMDB_Rating <= 3
+                    ? redStyle
+                    : item.IMDB_Rating <= 7 && item.IMDB_Rating > 3
+                    ? blackStyle
+                    : greenStyle
+                }
+              >
                 {item.IMDB_Rating ? item.IMDB_Rating : "-"}
               </p>
               <p className="movie--column" data-select={item.Id}>
                 {item.Major_Genre ? item.Major_Genre : "N/A"}
               </p>
             </div>
-            <div data-delete={item.Id}>
+            <div
+              data-delete={item.Id}
+              // style={item.Id == selectedMovie.Id ? selectedStyle : null}
+            >
               <button
                 className="delete--line"
                 data-delete={item.Id}

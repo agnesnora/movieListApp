@@ -26,14 +26,18 @@ export default function Movies() {
   }
   function getMovieDetail(e) {
     setSelectedMovie(
-      moviesArray.filter((movie) => movie.Id == e.target.dataset.select)[0]
+      moviesArrayClone.filter((movie) => movie.Id == e.target.dataset.select)[0]
     );
+
+    console.log(selectedMovie.Title);
     // setMoviesArray(moviesArray);
+
     setModalState(true);
   }
 
   function closeModal() {
     setModalState(false);
+    setSelectedMovie("");
   }
   useEffect(() => {
     setMoviesArrayClone(movies);

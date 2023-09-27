@@ -55,7 +55,6 @@ export default function Title() {
           <h2>Delete</h2>
         </div>
       </div>
-      <hr />
     </div>
   );
 }

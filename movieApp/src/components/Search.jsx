@@ -32,7 +32,7 @@ export default function Search() {
     //   }
     // });
     setMoviesArray(
-      moviesArray.filter((film) => {
+      moviesArrayClone.filter((film) => {
         if (
           film.Title &&
           film.Title.toString()
