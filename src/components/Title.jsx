@@ -17,17 +17,17 @@ export default function Title() {
   const handleMouseOutRating = () => {
     setIsRatingHovering(false);
   };
-  const { setMoviesArray, moviesArrayClone } = useContext(MovieContext);
+  const { setMoviesArray, moviesArray } = useContext(MovieContext);
 
   function sortByTitle() {
-    setMoviesArray(sort(moviesArrayClone, "Title"));
+    setMoviesArray(sort(moviesArray, "Title"));
   }
 
   function sortByGenre() {
-    setMoviesArray(sort(moviesArrayClone, "Major_Genre"));
+    setMoviesArray(sort(moviesArray, "Major_Genre"));
   }
   function sortByRating() {
-    setMoviesArray(sort(moviesArrayClone, "IMDB_Rating", "descending"));
+    setMoviesArray(sort(moviesArray, "IMDB_Rating", "descending"));
   }
 
   function sort(arr, propertyName, order = "ascending") {
