@@ -79,7 +79,8 @@ form > button {
   padding: 2em 3em;
   border-radius: 18px;
   width: 40%;
-  border: #d9c4e5 solid 5px;
+
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
 }
 
 .modal--step {
@@ -88,14 +89,20 @@ form > button {
   align-items: center;
 }
 .close--modal--button {
-  background-color: transparent;
+  background-color: #465f5c;
+  border: none;
   border-radius: 8px;
-  border: #d9c4e5 solid 2px;
-  color: #d9c4e5;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
+  color: #f8b3b4;
   font-size: 1em;
+  font-weight: 500;
   padding: 0.8em 1.1em;
   cursor: pointer;
   font-weight: 500;
+}
+.close--modal--button:hover {
+  background-color: #f8b3b4;
+  color: #465f5c;
 }
 
 .modal--step > button,
@@ -107,7 +114,7 @@ form > button {
   font-weight: 700px;
 }
 .modal--icon {
-  color: #d9c4e5;
+  color: #f8b3b4;
   font-size: 4.5em;
 }
 
@@ -141,7 +148,7 @@ form > button {
 .table--container:hover,
 .table--container:nth-child(even):hover {
   background-color: #fffffe;
-  color: #475a5a;
+  color: #5e1e1f;
 }
 
 .table--container:nth-child(even) {
@@ -189,6 +196,7 @@ form > button {
   margin: 1em 0.5em;
   font-weight: 400;
   font-size: 1.5em;
+  color: #de474a;
 }
 
 .page--step--icon {
@@ -197,7 +205,7 @@ form > button {
 }
 
 .page--step--icon:hover {
-  color: #d9c4e5;
+  color: #de474a;
 }
 .pagination > button {
   background-color: transparent;

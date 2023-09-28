@@ -23,12 +23,24 @@ export default function Pagination() {
   }
   return (
     <div className="pagination">
-      <button onClick={() => stepBackward(currentPage)}>
+      <button
+        onClick={() => stepBackward(currentPage)}
+        disabled={currentPage == 1 ? true : false}
+      >
         {" "}
         <IoArrowBackCircle className="page--step--icon" />{" "}
       </button>
       <h1 className="pageNumber">{currentPage}</h1>
-      <button onClick={() => stepForward(currentPage)}>
+      <button
+        onClick={() => stepForward(currentPage)}
+        disabled={
+          currentPage == pageNumbers.length
+            ? true
+            : totalMovies / moviesPerPage < currentPage
+            ? true
+            : false
+        }
+      >
         <IoArrowForwardCircle className="page--step--icon" />
       </button>
     </div>

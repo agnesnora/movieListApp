@@ -11,7 +11,7 @@ import PopUp from "./PopUp";
 const MovieContext = createContext();
 
 export default function Movies() {
-  const [moviesArrayClone, setMoviesArrayClone] = useState([]);
+  const [moviesArrayClone, setMoviesArrayClone] = useState(movies);
   const [moviesArray, setMoviesArray] = useState(movies);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(20);
@@ -49,9 +49,9 @@ export default function Movies() {
     setModalState(false);
     setSelectedMovie("");
   }
-  useEffect(() => {
-    setMoviesArrayClone(movies);
-  }, []);
+  // useEffect(() => {
+  //   setMoviesArrayClone(movies);
+  // }, []);
 
   return (
     <MovieContext.Provider
