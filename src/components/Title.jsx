@@ -1,9 +1,23 @@
 import { MovieContext } from "./Movies";
-import { useContext } from "react";
-
+import { useContext, useState } from "react";
+import { BsSortAlphaDown, BsSortNumericDownAlt } from "react-icons/bs";
 export default function Title() {
-  const { moviesArray, setMoviesArray, moviesArrayClone } =
-    useContext(MovieContext);
+  const [isTitleHovering, setIsTitleHovering] = useState(false);
+  const [isRatingHovering, setIsRatingHovering] = useState(false);
+  const handleMouseOverTitle = () => {
+    setIsTitleHovering(true);
+  };
+  const handleMouseOverRating = () => {
+    setIsRatingHovering(true);
+  };
+  const handleMouseOutTitle = () => {
+    setIsTitleHovering(false);
+    setIsRatingHovering(false);
+  };
+  const handleMouseOutRating = () => {
+    setIsRatingHovering(false);
+  };
+  const { setMoviesArray, moviesArrayClone } = useContext(MovieContext);
 
   function sortByTitle() {
     setMoviesArray(sort(moviesArrayClone, "Title"));
@@ -34,21 +48,30 @@ export default function Title() {
     return sortedArr;
   }
 
-  // function handleHeaderTitleClick() {
-  //   setMoviesArray(sortByTitle(moviesArray, "Title"));
-  // }
-
-  // function handleHeaderRatingClick() {
-  //   setMoviesArray(sortByTitle(moviesArray, "IMDB_Rating", "descending"));
-  // }
   return (
     <div>
       <div className="table--container--firstline">
         <div className=" movie--table--title">
-          <h2 onClick={sortByTitle}>Title</h2>
+          <h2
+            onClick={sortByTitle}
+            onMouseOver={handleMouseOverTitle}
+            onMouseOut={handleMouseOutTitle}
+          >
+            Title
+            {isTitleHovering ? <BsSortAlphaDown className="sortIcon" /> : null}
+          </h2>
           <h2>Duration</h2>
           <h2>Release date</h2>
-          <h2 onClick={sortByRating}>Rating</h2>
+          <h2
+            onClick={sortByRating}
+            onMouseOver={handleMouseOverRating}
+            onMouseOut={handleMouseOutRating}
+          >
+            Rating{" "}
+            {isRatingHovering ? (
+              <BsSortNumericDownAlt className="sortIcon" />
+            ) : null}
+          </h2>
           <h2 onClick={sortByGenre}>Genre</h2>
         </div>
         <div className="delete--title--first">

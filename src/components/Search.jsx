@@ -1,6 +1,6 @@
 import { MovieContext } from "./Movies";
 import { useContext, useState, useEffect } from "react";
-import { IoReloadOutline, IoSearch } from "react-icons/io5";
+import { IoReloadOutline } from "react-icons/io5";
 
 export default function Search() {
   const [activeSearch, setActiveSearch] = useState(false);
@@ -8,12 +8,12 @@ export default function Search() {
     moviesArray,
     setMoviesArray,
     moviesArrayClone,
-    currentPage,
+    // currentPage,
     setCurrentPage,
   } = useContext(MovieContext);
-  useEffect(() => {
-    setMoviesArray[moviesArray];
-  });
+  // useEffect(() => {
+  //   setMoviesArray[moviesArray];
+  // });
   const [searchValue, setSearchValue] = useState("");
   function getInputValue(event) {
     setSearchValue(event.target.value);
@@ -54,8 +54,6 @@ export default function Search() {
         }
       })
     );
-
-    // console.log("search után moviesARray ", moviesArray);
   }
 
   function refresh() {
@@ -72,12 +70,6 @@ export default function Search() {
           name="searchBar"
           value={searchValue}
           onChange={getInputValue}
-
-          // onKeyUp={(e) => {
-          //   if (e.key === "Enter") {
-          //     e.preventDefault() && search;
-          //   }
-          // }}
         />
         <button type="submit" className="button--search" onClick={search}>
           Search

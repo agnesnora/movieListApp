@@ -7,7 +7,6 @@ export default function Table() {
     setMoviesArray,
     getMovieDetail,
     selectedMovie,
-    modalState,
 
     currentMovies,
   } = useContext(MovieContext);
