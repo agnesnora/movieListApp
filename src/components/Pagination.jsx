@@ -1,5 +1,6 @@
 import { MovieContext } from "./Movies";
 import { useContext } from "react";
+import { IoArrowForwardCircle, IoArrowBackCircle } from "react-icons/io5";
 
 export default function Pagination() {
   const { moviesArray, moviesPerPage, paginate, currentPage, setCurrentPage } =
@@ -22,9 +23,14 @@ export default function Pagination() {
   }
   return (
     <div className="pagination">
-      <button onClick={() => stepBackward(currentPage)}>Previous</button>
-      <h1>{currentPage}</h1>
-      <button onClick={() => stepForward(currentPage)}>Next</button>
+      <button onClick={() => stepBackward(currentPage)}>
+        {" "}
+        <IoArrowBackCircle className="page--step--icon" />{" "}
+      </button>
+      <h1 className="pageNumber">{currentPage}</h1>
+      <button onClick={() => stepForward(currentPage)}>
+        <IoArrowForwardCircle className="page--step--icon" />
+      </button>
     </div>
   );
 }

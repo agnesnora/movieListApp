@@ -71,15 +71,15 @@ export default function Movies() {
       }}
     >
       <Search />
-      <div className="main--table--container">
-        <main className="main">
+      <main className="main">
+        <div className="main--table--container">
           <Title />
           {/* {isHide ? <PopUp /> : null} */}
           {modalState ? <Modal /> : null}
           <Table />
           <Pagination />
-        </main>
-      </div>
+        </div>
+      </main>
     </MovieContext.Provider>
   );
 }

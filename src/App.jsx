@@ -13,7 +13,7 @@ function App() {
 
       <Movies />
 
-      <Footer>2023 MovieListApp</Footer>
+      <Footer>2023 Popcorn MovieListApp</Footer>
     </>
   );
 }
