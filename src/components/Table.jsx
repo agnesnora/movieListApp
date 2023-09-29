@@ -20,8 +20,8 @@ export default function Table() {
   }
 
   const selectedStyle = {
-    backgroundColor: " #fffffe",
-    color: "#DE474A",
+    backgroundColor: " #5d2a42",
+    color: " #fff1eb",
   };
 
   const redStyle = {
@@ -68,9 +68,10 @@ export default function Table() {
                 className="movie--column"
                 data-select={item.Id}
                 style={
-                  item.IMDB_Rating <= 3
+                  (item.IMDB_Rating <= 3) & (item.IMDB_Rating !== null)
                     ? redStyle
-                    : item.IMDB_Rating <= 7 && item.IMDB_Rating > 3
+                    : item.IMDB_Rating == null ||
+                      (item.IMDB_Rating <= 7 && item.IMDB_Rating > 3)
                     ? blackStyle
                     : greenStyle
                 }
