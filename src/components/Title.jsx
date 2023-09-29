@@ -73,9 +73,12 @@ export default function Title() {
             onClick={sortByTitle}
             onMouseOver={handleMouseOverTitle}
             onMouseOut={handleMouseOutTitle}
+            className="title--sort"
           >
             Title
-            {isTitleHovering ? <BsSortAlphaDown className="sortIcon" /> : null}
+            {isTitleHovering ? (
+              <BsSortAlphaDown className="sort--icon" />
+            ) : null}
           </h2>
           <h2>Duration</h2>
           <h2>Release date</h2>
@@ -83,13 +86,16 @@ export default function Title() {
             onClick={sortByRating}
             onMouseOver={handleMouseOverRating}
             onMouseOut={handleMouseOutRating}
+            className="title--sort"
           >
             Rating{" "}
             {isRatingHovering ? (
-              <BsSortNumericDownAlt className="sortIcon" />
+              <BsSortNumericDownAlt className="sort--icon" />
             ) : null}
           </h2>
-          <h2 onClick={sortByGenre}>Genre</h2>
+          <h2 className="title--sort" onClick={sortByGenre}>
+            Genre
+          </h2>
         </div>
         <div className="delete--title--first">
           <h2>Delete</h2>

@@ -8,8 +8,8 @@ body {
 }
 
 .footer {
-  background-color: #d9c4e5;
-  color: #475a5a;
+  background-color: #5d2a42;
+  color: #fda0a1;
   padding: 2em;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  background: url("../../movieApp/Popcorns4.png") #d9c4e5;
+  background: url("../../movieApp/Popcorns4.png") #5d2a42;
   background-position: right;
   background-size: contain;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@ body {
   display: inline-block;
   font-family: "Poppins", sans-serif;
   font-size: 4em;
-  color: #475a5a;
+  color: #fda0a1;
   font-weight: 200;
 }
 
@@ -40,9 +40,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.2em 2.5em;
+  padding: 3em 2em;
   height: 5em;
-  background-color: #d9c4e5;
+  background-color: #5d2a42;
 }
 form > input,
 form > button {
@@ -62,7 +62,11 @@ form > button {
   /* max-width: 91vw; */
 }
 .sort--icon {
-  font-size: 1.1em;
+  font-size: 1em;
+}
+
+.title--sort {
+  cursor: pointer;
 }
 .movie--table--title > h2,
 .delete--title--first > h2 {
@@ -139,9 +143,10 @@ form > button {
   padding: 0 1em 0 0;
 }
 .main--table--container {
-  background-color: #f8f3ec;
+  /* background-color: #fff1eb; */
+  background-color: #475a5a;
 
-  color: #475a5a;
+  color: #fff1eb;
   /* padding: 0 2em; */
   width: 96%;
   margin: 0 auto;
@@ -149,19 +154,21 @@ form > button {
 
 .table--container:hover,
 .table--container:nth-child(even):hover {
-  background-color: #fffffe;
-  color: #5e1e1f;
+  background-color: #5d2a42;
+  color: #fec3c4;
 }
 
 .table--container:nth-child(even) {
-  background: #46605b;
+  /* background: #46605b; */
+  background-color: #fff1eb;
 
-  color: #f8b3b4;
+  color: #5d2a42;
 }
 
 .table--container--firstline,
 .delete--title {
-  color: #465f5c;
+  color: #f8b3b4;
+  background-color: #475a5a;
   text-transform: uppercase;
   font-weight: 400;
 
@@ -198,16 +205,16 @@ form > button {
   margin: 1em 0.5em;
   font-weight: 400;
   font-size: 1.5em;
-  color: #de474a;
+  color: #fda0a1;
 }
 
 .page--step--icon {
   font-size: 3em;
-  color: #465f5c;
+  color: #fff1eb;
 }
 
 .page--step--icon:hover {
-  color: #de474a;
+  color: #fda0a1;
 }
 .pagination > button {
   background-color: transparent;
@@ -252,5 +259,5 @@ input {
 /*Rating*/
 
 main {
-  background-color: #f8f3ec;
+  background-color: #475a5a;
 }
