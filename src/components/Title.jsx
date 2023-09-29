@@ -69,30 +69,34 @@ export default function Title() {
     <div>
       <div className="table--container--firstline">
         <div className=" movie--table--title">
-          <h2
-            onClick={sortByTitle}
-            onMouseOver={handleMouseOverTitle}
-            onMouseOut={handleMouseOutTitle}
-            className="title--sort"
-          >
-            Title
-            {isTitleHovering ? (
-              <BsSortAlphaDown className="sort--icon" />
-            ) : null}
-          </h2>
+          <div className="sorting">
+            {" "}
+            <h2
+              onClick={sortByTitle}
+              onMouseOver={handleMouseOverTitle}
+              onMouseOut={handleMouseOutTitle}
+              className="title--sort"
+            >
+              Title
+            </h2>
+            <BsSortAlphaDown className="sort--icon" />
+          </div>
+
           <h2>Duration</h2>
           <h2>Release date</h2>
-          <h2
-            onClick={sortByRating}
-            onMouseOver={handleMouseOverRating}
-            onMouseOut={handleMouseOutRating}
-            className="title--sort"
-          >
-            Rating{" "}
-            {isRatingHovering ? (
-              <BsSortNumericDownAlt className="sort--icon" />
-            ) : null}
-          </h2>
+          <div className="sorting">
+            <h2
+              onClick={sortByRating}
+              onMouseOver={handleMouseOverRating}
+              onMouseOut={handleMouseOutRating}
+              className="title--sort"
+              style={{ width: "50%", margin: "0px;" }}
+            >
+              Rating{" "}
+            </h2>{" "}
+            <BsSortNumericDownAlt className="sort--icon" />
+          </div>
+
           <h2 className="title--sort" onClick={sortByGenre}>
             Genre
           </h2>

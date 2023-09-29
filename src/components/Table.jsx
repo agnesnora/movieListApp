@@ -28,16 +28,28 @@ export default function Table() {
     color: "#A5414B",
     backgroundColor: "#fffffe",
     borderRadius: "18px",
+    width: "50%",
+    justifySelf: "center",
   };
   const greenStyle = {
     color: "green",
     backgroundColor: "#fffffe",
     borderRadius: "18px",
+    width: "50%",
+    justifySelf: "center",
   };
   const blackStyle = {
     color: "black",
     backgroundColor: "#fffffe",
     borderRadius: "18px",
+    width: "50%",
+    justifySelf: "center",
+  };
+
+  const basic = {
+    borderRadius: "18px",
+    width: "50%",
+    justifySelf: "center",
   };
 
   return (

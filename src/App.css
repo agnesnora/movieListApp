@@ -53,20 +53,27 @@ form > button {
 .movie--table,
 .movie--table--title {
   display: grid;
-  grid-template-columns: minmax(200px, 340px) 100px 200px 180px 100px;
+  grid-template-columns: minmax(200px, 340px) 100px 200px 150px 100px;
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
   /* font-size: 1.1em; */
   /* max-width: 91vw; */
 }
-.sort--icon {
-  font-size: 1em;
+
+.sorting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sorting > h2,
+.sorting > .sort--icon {
+  font-size: 1.2em;
 }
 
-.title--sort {
+/* .title--sort {
   cursor: pointer;
-}
+} */
 .movie--table--title > h2,
 .delete--title--first > h2 {
   font-size: 1.2em;
@@ -184,15 +191,14 @@ form > button {
   background-color: #fffffe;
   color: #475a5a;
   padding: 1em 1.3em;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 
 .delete--line:hover {
   border: none;
-  background-color: #f8b3b4;
+  background-color: #fec3c4;
   color: #2e425e;
 
-  border-radius: 20px;
   font-weight: 500;
 }
 
