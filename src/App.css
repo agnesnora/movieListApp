@@ -4,7 +4,8 @@
 body {
   margin: 0 auto;
   font-family: "Poppins", sans-serif;
-  max-width: max-content;
+  max-width: 1300px;
+  min-width: 1085px;
 }
 
 .footer {
@@ -53,10 +54,8 @@ form > button {
 .movie--table--title {
   display: grid;
   grid-template-columns: minmax(200px, 340px) 100px 200px 180px 100px;
-  margin: 0.5em 1em;
   align-items: center;
-  justify-content: center;
-
+  justify-content: space-evenly;
   text-align: center;
   /* font-size: 1.1em; */
   /* max-width: 91vw; */
@@ -120,7 +119,7 @@ form > button {
   font-weight: 700px;
 }
 .modal--icon {
-  color: #f8b3b4;
+  color: #fb6376;
   font-size: 4.5em;
 }
 
@@ -129,7 +128,8 @@ form > button {
 }
 
 .modal--title {
-  color: #465f5c;
+  color: #fb6376;
+  font-size: 2.2em;
 }
 
 /* .modal--icon:hover {
@@ -140,6 +140,7 @@ form > button {
 .table--container--firstline {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   padding: 0 1em 0 0;
 }
 .main--table--container {
