@@ -30,12 +30,29 @@ export default function Title() {
     setMoviesArray(sort(moviesArray, "IMDB_Rating", "descending"));
   }
 
+  // function sort(arr, propertyName, order = "ascending") {
+  //   const sortedArr = [...arr].sort((a, b) => {
+  //     if (a[propertyName] < b[propertyName]) {
+  //       return -1;
+  //     }
+  //     if (a[propertyName] > b[propertyName]) {
+  //       return 1;
+  //     }
+  //     return 0;
+  //   });
+
+  //   if (order === "descending") {
+  //     return sortedArr.reverse();
+  //   }
+
+  //   return sortedArr;
+  // }
   function sort(arr, propertyName, order = "ascending") {
     const sortedArr = [...arr].sort((a, b) => {
-      if (a[propertyName] < b[propertyName]) {
+      if (a[propertyName] == null || a[propertyName] < b[propertyName]) {
         return -1;
       }
-      if (a[propertyName] > b[propertyName]) {
+      if (b[propertyName] == null || a[propertyName] > b[propertyName]) {
         return 1;
       }
       return 0;
