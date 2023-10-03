@@ -8,7 +8,7 @@ export default function Search() {
   useEffect(() => {
     setTimeout(() => {
       setIsShown(true);
-    }, 1500);
+    }, 2000);
     setTimeout(() => {
       setIsShown(false);
     }, 5000);
