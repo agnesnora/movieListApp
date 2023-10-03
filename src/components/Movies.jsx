@@ -1,31 +1,38 @@
-import { useState, createContext, useEffect } from "react";
-import movies from "../data/moviesTest.json";
+import { useState, createContext } from "react";
+// import movies from "../data/moviesTest.json";
+// import server from "../server";
+import movies from "../data/movies.json";
 
 import Title from "./Title";
 import Table from "./Table";
 import Modal from "./Modal";
 import Search from "./Search";
 import Pagination from "./Pagination";
-import PopUp from "./PopUp";
 
 const MovieContext = createContext();
 
 export default function Movies() {
-  const [moviesArrayClone, setMoviesArrayClone] = useState(movies);
+  const [moviesArrayClone] = useState(movies);
   const [moviesArray, setMoviesArray] = useState(movies);
+
+  // const [moviesArrayClone, setMoviesArrayClone] = useState([]);
+  // useEffect(() => {
+  //   fetch("/api/movies")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data.movies), setMoviesArrayClone(data.movies);
+  //     });
+  // }, []);
+
+  // const [moviesArray, setMoviesArray] = useState([]);
+  // useEffect(() => {
+  //   setMoviesArray(moviesArrayClone);
+  // }, [moviesArrayClone]);
+
   const [currentPage, setCurrentPage] = useState(1);
   const [moviesPerPage] = useState(20);
   const [selectedMovie, setSelectedMovie] = useState([]);
   const [modalState, setModalState] = useState(false);
-  const [isHide, setIsHide] = useState(
-    setTimeout(() => true),
-    2000
-  );
-  useEffect(() => {
-    setTimeout(() => {
-      setIsHide(false);
-    }, 5000);
-  });
 
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
@@ -40,7 +47,6 @@ export default function Movies() {
     );
 
     console.log(selectedMovie.Title);
-    // setMoviesArray(moviesArray);
 
     setModalState(true);
   }
@@ -49,9 +55,6 @@ export default function Movies() {
     setModalState(false);
     setSelectedMovie("");
   }
-  // useEffect(() => {
-  //   setMoviesArrayClone(movies);
-  // }, []);
 
   return (
     <MovieContext.Provider

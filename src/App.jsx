@@ -1,26 +1,24 @@
 import "./App.css";
-
+import { useEffect, useState } from "react";
 import Movies from "./components/Movies";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-// import PopUp from "./components/PopUp";
-// import { useEffect, useState } from "react";
+import Message from "./components/Message";
+
 function App() {
-  // const [isShown, setIsShown] = useState(false);
+  // const [isShown, setIsShown] = useState();
   // useEffect(() => {
   //   setTimeout(() => {
-  //     console.log("popup");
   //     setIsShown(true);
   //   }, 2000);
-  //   // setTimeout(() => {
-  //   //   console.log("pcili");
-  //   //   setIsShown(false);
-  //   // }, 2000);
+  //   setTimeout(() => {
+  //     setIsShown(false);
+  //   }, 6000);
   // }, []);
   return (
     <>
       <Header />
-      {/* {isShown ? <PopUp /> : null} */}
+
       <Movies />
 
       <Footer>2023 Popcorn MovieListApp</Footer>

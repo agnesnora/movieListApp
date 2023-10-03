@@ -1,22 +1,7 @@
 import { MovieContext } from "./Movies";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BsSortAlphaDown, BsSortNumericDownAlt } from "react-icons/bs";
 export default function Title() {
-  const [isTitleHovering, setIsTitleHovering] = useState(false);
-  const [isRatingHovering, setIsRatingHovering] = useState(false);
-  const handleMouseOverTitle = () => {
-    setIsTitleHovering(true);
-  };
-  const handleMouseOverRating = () => {
-    setIsRatingHovering(true);
-  };
-  const handleMouseOutTitle = () => {
-    setIsTitleHovering(false);
-    setIsRatingHovering(false);
-  };
-  const handleMouseOutRating = () => {
-    setIsRatingHovering(false);
-  };
   const { setMoviesArray, moviesArray } = useContext(MovieContext);
 
   function sortByTitle() {
@@ -30,23 +15,6 @@ export default function Title() {
     setMoviesArray(sort(moviesArray, "IMDB_Rating", "descending"));
   }
 
-  // function sort(arr, propertyName, order = "ascending") {
-  //   const sortedArr = [...arr].sort((a, b) => {
-  //     if (a[propertyName] < b[propertyName]) {
-  //       return -1;
-  //     }
-  //     if (a[propertyName] > b[propertyName]) {
-  //       return 1;
-  //     }
-  //     return 0;
-  //   });
-
-  //   if (order === "descending") {
-  //     return sortedArr.reverse();
-  //   }
-
-  //   return sortedArr;
-  // }
   function sort(arr, propertyName, order = "ascending") {
     const sortedArr = [...arr].sort((a, b) => {
       if (a[propertyName] == null || a[propertyName] < b[propertyName]) {
@@ -71,12 +39,7 @@ export default function Title() {
         <div className=" movie--table--title">
           <div className="sorting">
             {" "}
-            <h2
-              onClick={sortByTitle}
-              onMouseOver={handleMouseOverTitle}
-              onMouseOut={handleMouseOutTitle}
-              className="title--sort"
-            >
+            <h2 onClick={sortByTitle} className="title--sort">
               Title
             </h2>
             <BsSortAlphaDown className="sort--icon" />
@@ -87,8 +50,6 @@ export default function Title() {
           <div className="sorting">
             <h2
               onClick={sortByRating}
-              onMouseOver={handleMouseOverRating}
-              onMouseOut={handleMouseOutRating}
               className="title--sort"
               style={{ width: "50%", margin: "0px;" }}
             >

@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import Message from "./Message";
+
 export default function Header() {
+  // const [isShown, setIsShown] = useState();
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsShown(true);
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     setIsShown(false);
+  //   }, 6000);
+  // }, []);
+
   return (
     <div>
       <div
@@ -10,6 +23,7 @@ export default function Header() {
           MovieApp
         </h1>
       </div>
+      {/* {isShown ? <Message isShown={isShown} /> : null} */}
     </div>
   );
 }
