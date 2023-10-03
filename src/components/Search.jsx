@@ -13,18 +13,12 @@ export default function Search() {
       setIsShown(false);
     }, 6000);
   }, []);
-  const [activeSearch, setActiveSearch] = useState(false);
-  const {
-    moviesArray,
-    setMoviesArray,
-    moviesArrayClone,
-    // currentPage,
-    setCurrentPage,
-  } = useContext(MovieContext);
-  // useEffect(() => {
-  //   setMoviesArray[moviesArray];
-  // });
+
+  const { setMoviesArray, moviesArrayClone, setCurrentPage } =
+    useContext(MovieContext);
+
   const [searchValue, setSearchValue] = useState("");
+
   function getInputValue(event) {
     setSearchValue(event.target.value);
   }
@@ -36,22 +30,11 @@ export default function Search() {
   }
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("refresh prevented");
   };
 
   function search(event) {
     event.preventDefault();
-    setActiveSearch(true);
-    // const searchedMovieArray = moviesArray.filter((film) => {
-    //   if (
-    //     film.Title &&
-    //     film.Title.toString()
-    //       .toLowerCase()
-    //       .includes(searchValue.toLocaleLowerCase())
-    //   ) {
-    //     return film;
-    //   }
-    // });
+
     setMoviesArray(
       moviesArrayClone.filter((film) => {
         if (
@@ -88,7 +71,6 @@ export default function Search() {
           <button
             type="button"
             className="button--search"
-            onSubmit={() => false}
             onClick={deleteSearch}
           >
             Delete search
@@ -101,9 +83,9 @@ export default function Search() {
           </button>
         </div>
       </div>
-      {isShown ? <Message isShown={isShown} /> : null}
-
-      {/* <Message /> */}
+      {isShown ? (
+        <Message>For more details click on the lines below</Message>
+      ) : null}
     </div>
   );
 }

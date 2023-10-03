@@ -8,6 +8,7 @@ import Table from "./Table";
 import Modal from "./Modal";
 import Search from "./Search";
 import Pagination from "./Pagination";
+import Message from "./Message";
 
 const MovieContext = createContext();
 
@@ -79,7 +80,13 @@ export default function Movies() {
           <Title />
           {/* {isHide ? <PopUp /> : null} */}
           {modalState ? <Modal /> : null}
-          <Table />
+          {moviesArray.length == 0 ? (
+            <div className="no--result">
+              <h3>Your search has no results. Try again.</h3>
+            </div>
+          ) : (
+            <Table />
+          )}
           <Pagination />
         </div>
       </main>

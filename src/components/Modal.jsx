@@ -1,15 +1,10 @@
 import { MovieContext } from "./Movies";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { IoArrowForwardCircle, IoArrowBackCircle } from "react-icons/io5";
 
 export default function Modal() {
-  const {
-    selectedMovie,
-    setSelectedMovie,
-    closeModal,
-    moviesArray,
-    // setMoviesArray,
-  } = useContext(MovieContext);
+  const { selectedMovie, setSelectedMovie, closeModal, moviesArray } =
+    useContext(MovieContext);
 
   function stepTwo(e) {
     console.log("selected stepben", selectedMovie.Title);
@@ -49,6 +44,7 @@ export default function Modal() {
           />
         </button>
         <h1 className="modal--title">{selectedMovie.Title}</h1>
+
         <button>
           <IoArrowForwardCircle
             onClick={stepTwo}

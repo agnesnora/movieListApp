@@ -1,8 +1,7 @@
-export default function Message(props) {
-  //   console.log(props.isShown);
+export default function Message({ children }) {
   return (
     <div className="message">
-      <h3>For more details click on the lines below</h3>
+      <h3>{children}</h3>
     </div>
   );
 }

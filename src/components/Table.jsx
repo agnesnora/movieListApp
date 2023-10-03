@@ -22,8 +22,6 @@ export default function Table() {
   const selectedStyle = {
     backgroundColor: "  #fb6376",
     color: " #fff1eb",
-    // color: "#fb6376",
-    // backgroundColor: "#fffffe",
     fontWeight: "700",
   };
 
