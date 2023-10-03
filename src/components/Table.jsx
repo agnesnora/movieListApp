@@ -1,15 +1,9 @@
-import Title from "./Title";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MovieContext } from "./Movies";
 
 export default function Table() {
-  const {
-    setMoviesArray,
-    getMovieDetail,
-    selectedMovie,
-
-    currentMovies,
-  } = useContext(MovieContext);
+  const { setMoviesArray, getMovieDetail, selectedMovie, currentMovies } =
+    useContext(MovieContext);
 
   function deleteLine(e) {
     const id = e.target.dataset.delete;
@@ -42,12 +36,6 @@ export default function Table() {
   const blackStyle = {
     color: "black",
     backgroundColor: "#fffffe",
-    borderRadius: "18px",
-    width: "50%",
-    justifySelf: "center",
-  };
-
-  const basic = {
     borderRadius: "18px",
     width: "50%",
     justifySelf: "center",
@@ -95,10 +83,7 @@ export default function Table() {
                 {item.Major_Genre ? item.Major_Genre : "N/A"}
               </p>
             </div>
-            <div
-              data-delete={item.Id}
-              // style={item.Id == selectedMovie.Id ? selectedStyle : null}
-            >
+            <div data-delete={item.Id}>
               <button
                 className="delete--line"
                 data-delete={item.Id}

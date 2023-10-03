@@ -8,10 +8,10 @@ export default function Search() {
   useEffect(() => {
     setTimeout(() => {
       setIsShown(true);
-    }, 2000);
+    }, 1500);
     setTimeout(() => {
       setIsShown(false);
-    }, 6000);
+    }, 5000);
   }, []);
 
   const { setMoviesArray, moviesArrayClone, setCurrentPage } =
@@ -79,7 +79,7 @@ export default function Search() {
         <div>
           <button type="button" className="button--search" onClick={refresh}>
             Reload
-            <IoReloadOutline />
+            <IoReloadOutline className="reload" />
           </button>
         </div>
       </div>

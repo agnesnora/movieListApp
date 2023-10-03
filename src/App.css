@@ -91,8 +91,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fffffe;
-  color: #475a5a;
+  background-color: #5d2a42;
+  color: #fffffe;
   padding: 2em 3em;
   border-radius: 18px;
   width: 40%;
@@ -185,7 +185,6 @@ form > button {
 
 .modal--title {
   color: #fb6376;
-
   font-size: 2.2em;
 }
 
@@ -229,11 +228,11 @@ button {
   border: 0;
 }
 .close--modal--button {
-  background-color: #465f5c;
+  background-color: #f8b3b4;
   border: none;
   border-radius: 8px;
   box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
-  color: #f8b3b4;
+  color: #465f5c;
   font-size: 1em;
   font-weight: 500;
   padding: 0.8em 1.1em;
@@ -264,8 +263,8 @@ button {
 }
 
 .close--modal--button:hover {
-  background-color: #f8b3b4;
-  color: #465f5c;
+  background-color: #fb6376;
+  color: #fffffe;
 }
 .modal--icon:hover {
   color: #475a5a;
@@ -275,7 +274,6 @@ button {
   border: none;
   background-color: #fec3c4;
   color: #2e425e;
-
   font-weight: 500;
 }
 
@@ -292,4 +290,8 @@ button {
 .page--step--icon {
   font-size: 3em;
   color: #fff1eb;
+}
+.reload {
+  margin-left: 0.4em;
+  vertical-align: middle;
 }

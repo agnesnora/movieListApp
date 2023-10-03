@@ -1,5 +1,5 @@
 import { MovieContext } from "./Movies";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { IoArrowForwardCircle, IoArrowBackCircle } from "react-icons/io5";
 
 export default function Modal() {
@@ -7,8 +7,6 @@ export default function Modal() {
     useContext(MovieContext);
 
   function stepTwo(e) {
-    console.log("selected stepben", selectedMovie.Title);
-    console.log("moviesArray steptwoban", moviesArray);
     const lastIndex = moviesArray.length - 1;
 
     if (e.target.dataset.step == "next") {
@@ -76,7 +74,7 @@ export default function Modal() {
         $
       </h3>
       <button className="close--modal--button" onClick={closeModal}>
-        Close modal
+        Close
       </button>
     </div>
   );
