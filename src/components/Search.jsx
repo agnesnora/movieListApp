@@ -11,7 +11,7 @@ export default function Search() {
     }, 2000);
     setTimeout(() => {
       setIsShown(false);
-    }, 5000);
+    }, 8000);
   }, []);
 
   const { setMoviesArray, moviesArrayClone, setCurrentPage } =
@@ -47,6 +47,7 @@ export default function Search() {
         }
       })
     );
+    setCurrentPage(1);
   }
 
   function refresh() {

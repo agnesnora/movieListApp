@@ -2,8 +2,13 @@ import { useContext } from "react";
 import { MovieContext } from "./Movies";
 
 export default function Table() {
-  const { setMoviesArray, getMovieDetail, selectedMovie, currentMovies } =
-    useContext(MovieContext);
+  const {
+    setMoviesArray,
+    getMovieDetail,
+    selectedMovie,
+    currentMovies,
+    moviesArray,
+  } = useContext(MovieContext);
 
   function deleteLine(e) {
     const id = e.target.dataset.delete;
@@ -88,6 +93,7 @@ export default function Table() {
                 className="delete--line"
                 data-delete={item.Id}
                 onClick={deleteLine}
+                disabled={moviesArray.length == 1 ? true : false}
               >
                 Delete line
               </button>
