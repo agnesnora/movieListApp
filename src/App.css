@@ -17,11 +17,11 @@ body {
   padding: 3em;
 }
 
-.footer {
+/* .footer {
   background-color: #5d2a42;
   color: #fda0a1;
   padding: 2em;
-}
+} */
 
 .message {
   margin-left: 1.3em;
@@ -130,12 +130,6 @@ main {
 }
 
 /**** T Y P O G R A P H Y ****/
-
-.footer > h1 {
-  text-align: center;
-  font-weight: 300;
-  font-size: 1em;
-}
 
 .header h1 {
   display: inline-block;
