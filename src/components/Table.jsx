@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { MovieContext } from "./Movies";
+import "../styles/Table/Table.css";
 
 export default function Table() {
   const {

@@ -1,0 +1,39 @@
+.table--container--firstline {
+  color: #f8b3b4;
+  background-color: #475a5a;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 1em 0 0;
+}
+.table--container--firstline .movie--table--title {
+  display: grid;
+  grid-template-columns: minmax(200px, 340px) 100px 200px 150px 100px;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.table--container--firstline .movie--table--title .title--sort {
+  padding: 0 1em;
+  cursor: pointer;
+}
+.table--container--firstline .movie--table--title h2 {
+  font-size: 1.1rem;
+}
+
+.sorting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sorting .sort--icon {
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 1em;
+}
+
+.delete--title--first > h2 {
+  font-size: 1.1rem;
+  padding: 0 1em;
+}/*# sourceMappingURL=Title.css.map */

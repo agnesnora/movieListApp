@@ -1,0 +1,18 @@
+.message {
+  margin-left: 1.3em;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.message h3 {
+  color: #2e425e;
+  font-weight: 500;
+  background-color: #fffffe;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.5em 1em;
+  margin-bottom: 0;
+  border-radius: 8px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
+}/*# sourceMappingURL=Message.css.map */

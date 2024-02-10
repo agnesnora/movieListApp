@@ -1,3 +1,4 @@
+import "../styles/Title/Title.css";
 import { MovieContext } from "./Movies";
 import { useContext } from "react";
 import { BsSortAlphaDown, BsSortNumericDownAlt } from "react-icons/bs";

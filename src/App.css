@@ -9,13 +9,13 @@ body {
 }
 
 /**** L A Y O U T ****/
-.header {
+/* .header {
   background: url("../../movieApp/Popcorns4.png") #5d2a42;
   background-position: right;
   background-size: contain;
   background-repeat: no-repeat;
   padding: 3em;
-}
+} */
 
 /* .footer {
   background-color: #5d2a42;
@@ -23,13 +23,13 @@ body {
   padding: 2em;
 } */
 
-.message {
+/* .message {
   margin-left: 1.3em;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 .search--container {
   display: flex;
   align-items: center;
@@ -43,38 +43,38 @@ body {
   padding-bottom: 0.1em;
 }
 
-.movie--table,
-.movie--table--title {
+/* .movie--table, */
+/* .movie--table--title {
   display: grid;
   grid-template-columns: minmax(200px, 340px) 100px 200px 150px 100px;
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-}
-.movie--table {
+} */
+/* .movie--table {
   cursor: pointer;
-}
+} */
 
-.table--container,
+/* .table--container,
 .table--container--firstline {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 0 1em 0 0;
-}
-.main--table--container {
+} */
+/* .main--table--container {
   background-color: #475a5a;
   color: #fff1eb;
   width: 96%;
   margin: 0 auto;
-}
+} */
 
-.table--container:nth-child(even) {
+/* .table--container:nth-child(even) {
   background-color: #fff1eb;
   color: #5d2a42;
-}
+} */
+/*  .table--container--firstline,*/
 
-.table--container--firstline,
 .delete--title {
   color: #f8b3b4;
   background-color: #475a5a;
@@ -82,12 +82,12 @@ body {
   align-items: center;
 }
 
-.sorting {
+/* .sorting {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.modal--container {
+} */
+/* .modal--container {
   text-align: center;
   position: fixed;
   top: 50%;
@@ -99,21 +99,21 @@ body {
   border-radius: 18px;
   width: 40%;
   box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
-}
+} */
 
-.modal--step {
+/* .modal--step {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-.no--result {
+} */
+/* .no--result {
   text-align: center;
-}
-main {
+} */
+/* main {
   background-color: #475a5a;
   margin-top: 0em;
   padding-top: 0.7em;
-}
+} */
 
 .delete--line {
   background-color: #fffffe;
@@ -131,13 +131,13 @@ main {
 
 /**** T Y P O G R A P H Y ****/
 
-.header h1 {
+/* .header h1 {
   display: inline-block;
   font-family: "Poppins", sans-serif;
   font-size: 4em;
   color: #fda0a1;
   font-weight: 200;
-}
+} */
 
 input {
   border-radius: 12px;
@@ -151,7 +151,7 @@ input {
   padding: 0.4em 0.7em;
 }
 
-.message > h3 {
+/* .message > h3 {
   color: #2e425e;
   font-weight: 500;
   background-color: #fffffe;
@@ -160,34 +160,34 @@ input {
   margin-bottom: 0;
   border-radius: 8px;
   box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
-}
+} */
 
 form > input,
 form > button {
   font-weight: 400;
 }
 
-.sorting > h2,
+/* .sorting > h2,
 .sorting > .sort--icon {
   font-size: 1.2em;
   cursor: pointer;
-}
+} */
 
-.movie--table--title > h2,
-.delete--title--first > h2 {
+/* .movie--table--title > h2, */
+/* .delete--title--first > h2 {
   font-size: 1.2em;
   padding: 0 1em;
-}
+} */
 
-.modal--title {
+/* .modal--title {
   color: #fb6376;
   font-size: 2.2em;
-}
-.title--sort {
+} */
+/* .title--sort {
   cursor: pointer;
-}
+} */
+/* .main--table--container > p, */
 
-.main--table--container > p,
 .delete--line {
   font-weight: 500;
   font-size: 1em;
@@ -226,7 +226,7 @@ button {
   white-space: nowrap;
   border: 0;
 }
-.close--modal--button {
+/* .close--modal--button {
   background-color: #f8b3b4;
   border: none;
   border-radius: 8px;
@@ -242,7 +242,7 @@ button {
   background-color: transparent;
   border: none;
   font-weight: 700px;
-}
+} */
 
 .pagination > button {
   background-color: transparent;
@@ -251,23 +251,23 @@ button {
 }
 
 /**** H O V E R ****/
-
+/* 
 .table--container:hover,
 .table--container:nth-child(even):hover {
   background-color: #5d2a42;
   color: #fec3c4;
-}
+} */
 .button--search:hover {
   box-shadow: #2e425e 0 0 0 3px, transparent 0 0 0 0;
 }
 
-.close--modal--button:hover {
+/* .close--modal--button:hover {
   background-color: #fb6376;
   color: #fffffe;
 }
 .modal--icon:hover {
   color: #475a5a;
-}
+} */
 
 .delete--line:hover {
   border: none;
@@ -281,10 +281,10 @@ button {
 }
 
 /**** I C O N S ****/
-.modal--icon {
+/* .modal--icon {
   color: #fb6376;
   font-size: 4.5em;
-}
+} */
 
 .page--step--icon {
   font-size: 3em;

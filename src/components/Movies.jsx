@@ -5,6 +5,7 @@ import Table from "./Table";
 import Modal from "./Modal";
 import Search from "./Search";
 import Pagination from "./Pagination";
+import "../styles/Movies/Movies.css";
 
 const MovieContext = createContext();
 

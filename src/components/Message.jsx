@@ -1,3 +1,5 @@
+import "../styles/Message/Message.css";
+
 export default function Message({ children }) {
   return (
     <div className="message">

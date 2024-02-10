@@ -1,7 +1,7 @@
 import { MovieContext } from "./Movies";
 import { useContext } from "react";
 import { IoArrowForwardCircle, IoArrowBackCircle } from "react-icons/io5";
-
+import "../styles/Modal/Modal.css";
 export default function Modal() {
   const { selectedMovie, setSelectedMovie, closeModal, moviesArray } =
     useContext(MovieContext);

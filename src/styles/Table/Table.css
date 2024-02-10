@@ -1,0 +1,35 @@
+.main--table--container > p {
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.table--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 1em 0 0;
+}
+.table--container:nth-child(even) {
+  background-color: #fff1eb;
+  color: #5d2a42;
+}
+.table--container:nth-child(even):hover {
+  background-color: #5d2a42;
+  color: #fec3c4;
+}
+.table--container:hover {
+  background-color: #5d2a42;
+  color: #fec3c4;
+}
+
+.movie--table {
+  display: grid;
+  grid-template-columns: minmax(200px, 340px) 100px 200px 150px 100px;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.movie--table {
+  cursor: pointer;
+}/*# sourceMappingURL=Table.css.map */
