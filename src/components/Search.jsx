@@ -2,6 +2,7 @@ import { MovieContext } from "./Movies";
 import { useContext, useState, useEffect } from "react";
 import { IoReloadOutline } from "react-icons/io5";
 import Message from "./Message";
+import "../styles/Search/Search.css";
 
 export default function Search() {
   const [isShown, setIsShown] = useState();

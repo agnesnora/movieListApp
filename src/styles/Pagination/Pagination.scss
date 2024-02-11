@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    background-color: transparent;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+  }
+  .page--step--icon {
+    font-size: 3em;
+    color: #fff1eb;
+    &:hover {
+      color: #fda0a1;
+    }
+  }
+  .pageNumber {
+    margin: 1em 0.5em;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #fda0a1;
+  }
+}

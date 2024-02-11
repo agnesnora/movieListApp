@@ -1,7 +1,7 @@
 import { MovieContext } from "./Movies";
 import { useContext } from "react";
 import { IoArrowForwardCircle, IoArrowBackCircle } from "react-icons/io5";
-
+import "../styles/Pagination/Pagination.css";
 export default function Pagination() {
   const { moviesArray, moviesPerPage, paginate, currentPage, setCurrentPage } =
     useContext(MovieContext);

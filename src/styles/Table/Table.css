@@ -21,6 +21,22 @@
   background-color: #5d2a42;
   color: #fec3c4;
 }
+.table--container .delete--line {
+  background-color: #fffffe;
+  color: #475a5a;
+  border: none;
+  padding: 1em 1.3em;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1em;
+  box-shadow: transparent 0 0 0 5px, rgba(18, 18, 18, 0.1) 0 6px 20px;
+}
+.table--container .delete--line:hover {
+  border: none;
+  background-color: #fec3c4;
+  color: #2e425e;
+  font-weight: 500;
+}
 
 .movie--table {
   display: grid;
