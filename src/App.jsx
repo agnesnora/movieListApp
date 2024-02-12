@@ -11,7 +11,7 @@ function App() {
 
       <Movies />
 
-      <Footer>2023 Popcorn MovieListApp</Footer>
+      <Footer></Footer>
     </>
   );
 }
